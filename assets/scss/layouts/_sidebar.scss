@@ -85,11 +85,34 @@ a.docs-link {
   font-size: $font-size-base * 0.9375;
 }
 
+.docs-link {
+  transition: all 0.3s;
+}
+
 .docs-link:hover,
 .docs-link.active,
 .page-links a:hover {
   text-decoration: none;
   color: $link-color;
+}
+
+.docs-link.active {
+  position: relative;
+  padding-left: 0.8rem;
+}
+
+.docs-link.active::before {
+  content: " ";
+  width: 8px;
+  height: 8px;
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -5px;
+  background-color: currentColor;
+  -webkit-animation: scalein 0.7s forwards;
+  animation: scalein 0.7s forwards;
 }
 
 .docs-links h3.sidebar-link,
